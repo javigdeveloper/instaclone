@@ -1,0 +1,6 @@
+<%= form_with model: @post do |f| %>
+    <div><%= image_tag(@post.pic, classs: "my-pic") %></div>
+    <div>caption: <%= f.text_area :caption, required: true %></div>
+    <%= f.submit %>
+<% end %>
+

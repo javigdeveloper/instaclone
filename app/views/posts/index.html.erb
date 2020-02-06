@@ -1,7 +1,17 @@
 <h2>list of posts...</h2>
 
 <% @posts.each do |post| %>
-  <%= image_tag post.pic, class: "my-pic" %>
-  <p><%= post.caption %></p>
-  <hr>
-<% end %> 
+  <div class="card" style="width: 18rem;">
+    <%= link_to(image_tag(post.pic, class: "card-img-top"), post) %>
+    <div class="card-body">
+      <h5 class="card-title"><%= post.user.email %></h5>
+      <p class="card-text"><%= post.caption %></p>
+
+    </div>
+  </div>
+  
+  
+ 
+<% end %>
+
+

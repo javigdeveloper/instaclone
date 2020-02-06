@@ -1,3 +1,11 @@
-<%= @user.email %>
-<%= @user.posts.each do |post| %>
+<%= @user.email %>'s page
+<% @user.posts.each do |post| %>
+    <%= link_to(image_tag(post.pic, class: "my-pic"), "/posts/#{post.id}") %>
+    <p><%= post.caption %></p>
 <% end %>
+    
+  
+    
+    
+
+<%= link_to 'All posts', "/posts", :class => 'navbar-link' %>

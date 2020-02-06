@@ -1,2 +1,9 @@
 <%= image_tag @post.pic, class: "my-pic" %>
 <p><%= @post.caption %></p>
+<p>This post was made by <%= @post.user.email %></p>
+<% if current_user == @post.user %>
+    <%= button_to "Delete", @post, method: :delete %>
+    <%= button_to "Edit", "/posts/#{@post.id}/edit", method: :get %>
+<% end %>
+
+<%= link_to 'All posts', "/posts", :class => 'navbar-link' %>
